@@ -12,7 +12,7 @@ if(isset($_POST["submit"])){
     if(ubah($_POST)>0){
         echo "
             <script>
-                alert('data berhasil diubah');
+                alert('Data berhasil diubah');
                 document.location.href = 'index.php';
             </script>
         ";
@@ -20,7 +20,7 @@ if(isset($_POST["submit"])){
     else{
         echo "
             <script>
-                alert('data gagal diubah');
+                alert('Data gagal diubah');
                 document.location.href = 'index.php';
             </script>
         ";
@@ -47,7 +47,7 @@ if(isset($_POST["submit"])){
     <form action="" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $mhs["id"]; ?>">
         <div class="mb-3 px-5">
-            <label for="nim" class="form-label">nim : </label>
+            <label for="nim" class="form-label">NIM : </label>
             <input type="text" name="nim" id="nim" value="<?php echo $mhs["nim"]; ?>" class="form-control">
         </div>
         <div class="mb-3 px-5">
@@ -62,7 +62,9 @@ if(isset($_POST["submit"])){
             <label for="jurusan" class="form-label">Jurusan : </label>
             <input type="text" name="jurusan" id="jurusan" value="<?php echo $mhs["jurusan"]; ?>" class="form-control">
         </div>
-        <button type="submit" name="submit" class="btn btn-primary mx-5">Ubah data</button>
+        <button type="submit" name="submit" class="btn btn-primary ms-5">Ubah data</button>
+        <a href="index.php"class="btn btn-primary ">Back</a>
     </form>
+    
 </body>
 </html>
