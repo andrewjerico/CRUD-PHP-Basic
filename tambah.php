@@ -5,7 +5,7 @@ if(isset($_POST["submit"])){
     if(tambah($_POST)>0){
         echo "
             <script>
-                alert('data berhasil ditambahkan');
+                alert('Data berhasil ditambahkan');
                 document.location.href = 'index.php';
             </script>
         ";
@@ -13,7 +13,7 @@ if(isset($_POST["submit"])){
     else{
         echo "
             <script>
-                alert('data gagal ditambahkan');
+                alert('Data gagal ditambahkan');
                 document.location.href = 'index.php';
             </script>
         ";
@@ -43,7 +43,7 @@ if(isset($_POST["submit"])){
     <form action="" method="POST" enctype="multipart/form-data">
 
         <div class="mb-3 px-5">
-            <label for="nim" class="form-label">nim : </label>
+            <label for="nim" class="form-label">Nim : </label>
             <input type="text" name="nim" id="nim" class="form-control">
         </div>
         
@@ -61,7 +61,8 @@ if(isset($_POST["submit"])){
             <label for="jurusan" class="form-label">Jurusan : </label>
             <input type="text" name="jurusan" id="jurusan" class="form-control">
         </div>
-        <button type="submit" name="submit" class="btn btn-primary mx-5">Tambah data</button>
+        <button type="submit" name="submit" class="btn btn-primary ms-5">Tambah data</button>
+        <a href="index.php"class="btn btn-primary ">Back</a>
     </form>
 
 </body>
