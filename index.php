@@ -46,17 +46,17 @@
                 <th><center>Aksi</center></th>
             </tr>
             <?php $i = 1;
-            foreach($mahasiswa as $row) { ?>
+            foreach($mahasiswa as $mhs) { ?>
                 <tr>
                     <td><center><?php echo $i;?></center></td>
-                    <td><center><?php echo $row["nim"]; ?></center></td>
-                    <td><center><?php echo $row["nama"]; ?></center></td>
-                    <td><center><?php echo $row["email"]; ?></center></td>
-                    <td><center><?php echo $row["jurusan"]; ?></center></td>
+                    <td><center><?php echo $mhs["nim"]; ?></center></td>
+                    <td><center><?php echo $mhs["nama"]; ?></center></td>
+                    <td><center><?php echo $mhs["email"]; ?></center></td>
+                    <td><center><?php echo $mhs["jurusan"]; ?></center></td>
                     <td>
                         <center>
-                            <a class="btn btn-outline-secondary" href="ubah.php?id=<?php echo $row["id"]; ?>">Ubah</a> |
-                            <a class="btn btn-outline-danger" href="hapus.php?id=<?php echo $row["id"]; ?>" onclick="return confirm('Yakin ingin menghapus <?php echo $row['nim']?>?')">Hapus</a>
+                            <a class="btn btn-outline-secondary" href="ubah.php?id=<?php echo $mhs["id"]; ?>">Ubah</a> |
+                            <a class="btn btn-outline-danger" href="hapus.php?id=<?php echo $mhs["id"]; ?>" onclick="return confirm('Yakin ingin menghapus <?php echo $row['nim']?>?')">Hapus</a>
                         </center>
                     </td>
                 </tr>
