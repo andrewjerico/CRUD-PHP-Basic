@@ -39,32 +39,37 @@ if(isset($_POST["submit"])){
     <link rel="stylesheet" href="css/bootstrap.css"> 
 </head>
 <body>
-    <div class="px-5">
-        <h1>Ubah data mahasiswa</h1>
+    <div class="p-4 bg-dark ">
+        <div class="px-5 text-white">
+            <center>
+                <h1>Ubah data mahasiswa</h1>
+            </center>
+        </div>
+    </div>
+    <div class="bg-secondary text-white bg-opacity-70">
+        <form action="" method="POST" enctype="multipart/form-data" style="padding-top:50px;padding-bottom: 68px; margin-left:150px;margin-right:150px;">
+            <input type="hidden" name="id" value="<?php echo $mhs["id"]; ?>">
+            <div class="mb-4 px-5">
+                <label for="nim" class="form-label"><b>NIM :</b>  </label>
+                <input type="text" name="nim" id="nim" value="<?php echo $mhs["nim"]; ?>" class="form-control">
+            </div>
+            <div class="mb-4 px-5">
+                <label for="nama" class="form-label"><b>Nama :</b>  </label>
+                <input type="text" name="nama" id="nama" value="<?php echo $mhs["nama"]; ?>" class="form-control">
+            </div>
+            <div class="mb-4 px-5">
+                <label for="email" class="form-label"><b>Email :</b>  </label>
+                <input type="text" name="email" id="email" value="<?php echo $mhs["email"]; ?>" class="form-control">
+            </div>
+            <div class="mb-4 px-5">
+                <label for="jurusan" class="form-label"><b>Jurusan :</b>  </label>
+                <input type="text" name="jurusan" id="jurusan" value="<?php echo $mhs["jurusan"]; ?>" class="form-control">
+            </div>
+            <button type="submit" name="submit" class="btn btn-outline-light ms-5">Ubah data</button>
+            <a href="index.php"class="btn btn-outline-light ">Back</a>
+        </form>
     </div>
     
-
-    <form action="" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?php echo $mhs["id"]; ?>">
-        <div class="mb-3 px-5">
-            <label for="nim" class="form-label">NIM : </label>
-            <input type="text" name="nim" id="nim" value="<?php echo $mhs["nim"]; ?>" class="form-control">
-        </div>
-        <div class="mb-3 px-5">
-            <label for="nama" class="form-label">Nama : </label>
-            <input type="text" name="nama" id="nama" value="<?php echo $mhs["nama"]; ?>" class="form-control">
-        </div>
-        <div class="mb-3 px-5">
-            <label for="email" class="form-label">Email : </label>
-            <input type="text" name="email" id="email" value="<?php echo $mhs["email"]; ?>" class="form-control">
-        </div>
-        <div class="mb-3 px-5">
-            <label for="jurusan" class="form-label">Jurusan : </label>
-            <input type="text" name="jurusan" id="jurusan" value="<?php echo $mhs["jurusan"]; ?>" class="form-control">
-        </div>
-        <button type="submit" name="submit" class="btn btn-primary ms-5">Ubah data</button>
-        <a href="index.php"class="btn btn-primary ">Back</a>
-    </form>
     
 </body>
 </html>

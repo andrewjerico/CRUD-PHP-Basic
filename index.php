@@ -20,30 +20,36 @@
     <link rel="stylesheet" href="css/bootstrap.css"> 
 </head>
 <body>
-    <div class="m-5">
-        <center><h1>Data Mahasiswa</h1></center>
+    <div class="p-4 bg-dark d-flex justify-content-between align-items-center">
+        <div>
+            <h3 class="text-white">Data Mahasiswa</h3>
+        </div>
+       
+        <div >
+            <form action="" method="POST" class="align-items-center">
+                <input type="text" name="keyword" placeholder="Cari data mahasiswa" size="30px " autocomplete="off" style="padding:6px">
+                <button type="submit" name="cari" class="btn btn-outline-light p-2 mb-1 ps-3 pe-3">Cari</button>
+                <a href="index.php" name="refresh" class="btn btn-outline-light p-2 mb-1 ps-3 pe-3">Refresh</a>
+           </form>
+           
+        </div>
+        
+        
     </div>
   
-    <div id="container" class="m-5">
-        <form action="" method="POST">
-           
-                <input type="text" name="keyword" placeholder="Cari" size="30px " autocomplete="off" style="padding:5px">
-                <button type="submit" name="cari" class="btn btn-outline-primary ">Cari</button>
-                <a href="index.php" name="refresh" class="btn btn-outline-primary">Refresh</a>
-            
-            
-        </form>
-        <a href="tambah.php" class="d-grid gap-2 col-3 mt-3 btn btn-primary" >Tambah data mahasiswa</a>
+    <div id="container" class="m-3">
+        
+        <a href="tambah.php" class="d-grid gap-2 col-3 mt-3 btn btn-dark bg-dark text-white" >Tambah data mahasiswa</a>
         <br>
 
         <table border="1" cellpadding="10" cellspacing="0" class="table table-striped">
-            <tr>
-                <th><center>No.</center></th>
-                <th><center>NIM</center></th>
-                <th><center>Nama</center></th>
-                <th><center>Email</center></th>
-                <th><center>Jurusan</center></th>
-                <th><center>Aksi</center></th>
+            <tr class="bg-dark">
+                <th class="text-white"><center>No.</center></th>
+                <th class="text-white"><center>NIM</center></th>
+                <th class="text-white"><center>Nama</center></th>
+                <th class="text-white"><center>Email</center></th>
+                <th class="text-white"><center>Jurusan</center></th>
+                <th class="text-white"><center>Aksi</center></th>
             </tr>
             <?php $i = 1;
             foreach($mahasiswa as $mhs) { ?>
