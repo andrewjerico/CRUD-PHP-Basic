@@ -56,7 +56,7 @@
                     <td>
                         <center>
                             <a class="btn btn-outline-secondary" href="ubah.php?id=<?php echo $mhs["id"]; ?>">Ubah</a> |
-                            <a class="btn btn-outline-danger" href="hapus.php?id=<?php echo $mhs["id"]; ?>" onclick="return confirm('Yakin ingin menghapus <?php echo $row['nim']?>?')">Hapus</a>
+                            <a class="btn btn-outline-danger" href="hapus.php?id=<?php echo $mhs["id"]; ?>" onclick="return confirm('Yakin ingin menghapus <?php echo $mhs['nim']?>?')">Hapus</a>
                         </center>
                     </td>
                 </tr>
