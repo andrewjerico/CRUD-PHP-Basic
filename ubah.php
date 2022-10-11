@@ -1,15 +1,17 @@
-<?php 
+<?php
+
 require 'functions.php';
 
 //ambil data dari url
 $id = $_GET["id"];
 
 $mhs = query("SELECT * FROM mahasiswa WHERE id = $id")[0];
+
 // hasilny array 2 dimensi
 // var_dump($mhs["nama"]);
 
 if(isset($_POST["submit"])){
-    if(ubah($_POST)>0){
+    if(update($_POST) > 0){
         echo "
             <script>
                 alert('Data berhasil diubah');
@@ -26,6 +28,7 @@ if(isset($_POST["submit"])){
         ";
     }
 }
+
 ?>
 
 <!DOCTYPE html>
