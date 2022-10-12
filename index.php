@@ -1,10 +1,10 @@
 <?php 
     require 'functions.php';
 
-    $mahasiswa = query("SELECT * FROM mahasiswa");
+    $data = query("SELECT * FROM mahasiswa");
 
     if(isset($_POST["cari"])){
-        $mahasiswa = cari($_POST["keyword"]);
+        $data = search($_POST["keyword"]);
     }
 ?>
 
@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Basic CRUD</title>
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css"> 
 </head>
@@ -43,6 +43,7 @@
         <br>
 
         <table border="1" cellpadding="10" cellspacing="0" class="table table-striped">
+
             <tr class="bg-dark">
                 <th class="text-white"><center>No.</center></th>
                 <th class="text-white"><center>NIM</center></th>
@@ -51,23 +52,29 @@
                 <th class="text-white"><center>Jurusan</center></th>
                 <th class="text-white"><center>Aksi</center></th>
             </tr>
-            <?php $i = 1;
-            foreach($mahasiswa as $mhs) { ?>
+
+            <?php $i = 1; foreach($data as $row) : ?>
                 <tr>
                     <td><center><?php echo $i;?></center></td>
-                    <td><center><?php echo $mhs["nim"]; ?></center></td>
-                    <td><center><?php echo $mhs["nama"]; ?></center></td>
-                    <td><center><?php echo $mhs["email"]; ?></center></td>
-                    <td><center><?php echo $mhs["jurusan"]; ?></center></td>
+                    <td><center><?php echo $row["nim"]; ?></center></td>
+                    <td><center><?php echo $row["nama"]; ?></center></td>
+                    <td><center><?php echo $row["email"]; ?></center></td>
+                    <td><center><?php echo $row["jurusan"]; ?></center></td>
                     <td>
                         <center>
-                            <a class="btn btn-outline-secondary" href="ubah.php?id=<?php echo $mhs["id"]; ?>">Ubah</a> |
-                            <a class="btn btn-outline-danger" href="hapus.php?id=<?php echo $mhs["id"]; ?>" onclick="return confirm('Yakin ingin menghapus <?php echo $mhs['nim']?>?')">Hapus</a>
+                            <a class="btn btn-outline-secondary" href="ubah.php?id=<?php echo $row["id"]; ?>">
+                                Ubah
+                            </a> 
+                            |
+                            <a class="btn btn-outline-danger" href="hapus.php?id=<?php echo $row["id"]; ?>" 
+                            onclick="return confirm('Yakin ingin menghapus <?php echo $row['nim']?> ?')">
+                                Hapus
+                            </a>
                         </center>
                     </td>
                 </tr>
-            <?php $i++;
-                } ?>
+            <?php $i++; endforeach; ?>
+
         </table>
         
     </div>

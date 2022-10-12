@@ -1,8 +1,9 @@
-<?php 
+<?php
+
 require 'functions.php';
 
 if(isset($_POST["submit"])){
-    if(tambah($_POST)>0){
+    if(insert($_POST) > 0){
         echo "
             <script>
                 alert('Data berhasil ditambahkan');
